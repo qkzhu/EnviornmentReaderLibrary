@@ -28,9 +28,4 @@
     return self;
 }
 
-- (NSString *)getData
-{
-    return [self.localDataHandler getData];
-}
-
 @end

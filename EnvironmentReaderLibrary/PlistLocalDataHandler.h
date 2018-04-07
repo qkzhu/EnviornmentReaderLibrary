@@ -1,5 +1,5 @@
 //
-//  MockLocalDataHandler.h
+//  PlistLocalDataHandler.h
 //  EnvironmentReaderLibrary
 //
 //  Created by QianKun on 7/4/18.
@@ -11,7 +11,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MockLocalDataHandler : NSObject <LocalDataInterface>
+@interface PlistLocalDataHandler : NSObject <LocalDataInterface>
+
+- (instancetype)initWithPlistPath:(nonnull NSString *)plistPath;
 
 @end
 

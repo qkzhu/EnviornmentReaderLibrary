@@ -15,7 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol LocalDataInterface <NSObject>
 
-- (NSString *)getData;
+- (BOOL)saveData:(nonnull id)data toPath:(nonnull NSString *)pathString;
+
+- (nullable id)getDataFromPath:(nonnull NSString *)pathString;
 
 @end
 

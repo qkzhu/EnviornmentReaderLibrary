@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		BB8B63BE24977B4D55078E1E /* libPods-EnvironmentReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4CC3AF116DDBEC8232B705B /* libPods-EnvironmentReader.a */; };
+		F70328602078C84700184571 /* ERRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = F703285F2078C84700184571 /* ERRegion.m */; };
+		F70328672078CDA500184571 /* ERAirData.m in Sources */ = {isa = PBXBuildFile; fileRef = F70328662078CDA500184571 /* ERAirData.m */; };
+		F703286D2078D01E00184571 /* ERDailyData.m in Sources */ = {isa = PBXBuildFile; fileRef = F703286C2078D01E00184571 /* ERDailyData.m */; };
+		F70328702078D1FB00184571 /* ERDataCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = F703286F2078D1FB00184571 /* ERDataCollection.m */; };
 		F795988A20787FE000575E23 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F795988920787FE000575E23 /* AppDelegate.m */; };
 		F795988D20787FE000575E23 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F795988C20787FE000575E23 /* ViewController.m */; };
 		F795989020787FE000575E23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F795988E20787FE000575E23 /* Main.storyboard */; };
@@ -16,7 +20,6 @@
 		F795989820787FE000575E23 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F795989720787FE000575E23 /* main.m */; };
 		F79598A220787FE100575E23 /* EnvironmentReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F79598A120787FE100575E23 /* EnvironmentReaderTests.m */; };
 		F79598AD20787FE100575E23 /* EnvironmentReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F79598AC20787FE100575E23 /* EnvironmentReaderUITests.m */; };
-		F79598BB2078805D00575E23 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F79598BA2078805D00575E23 /* Podfile */; };
 		F79598D82078AD9900575E23 /* ERNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F79598D72078AD9900575E23 /* ERNetworkManager.m */; };
 		F79598DB2078AEBF00575E23 /* ERDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F79598DA2078AEBF00575E23 /* ERDataManager.m */; };
 /* End PBXBuildFile section */
@@ -42,6 +45,14 @@
 		32DB54662F88EDD9FF236758 /* Pods-EnvironmentReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnvironmentReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EnvironmentReader/Pods-EnvironmentReader.debug.xcconfig"; sourceTree = "<group>"; };
 		905379BDB2F024989036019E /* Pods-EnvironmentReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnvironmentReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-EnvironmentReader/Pods-EnvironmentReader.release.xcconfig"; sourceTree = "<group>"; };
 		B4CC3AF116DDBEC8232B705B /* libPods-EnvironmentReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EnvironmentReader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F703285E2078C84700184571 /* ERRegion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ERRegion.h; sourceTree = "<group>"; };
+		F703285F2078C84700184571 /* ERRegion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ERRegion.m; sourceTree = "<group>"; };
+		F70328652078CDA500184571 /* ERAirData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ERAirData.h; sourceTree = "<group>"; };
+		F70328662078CDA500184571 /* ERAirData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ERAirData.m; sourceTree = "<group>"; };
+		F703286B2078D01E00184571 /* ERDailyData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ERDailyData.h; sourceTree = "<group>"; };
+		F703286C2078D01E00184571 /* ERDailyData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ERDailyData.m; sourceTree = "<group>"; };
+		F703286E2078D1FB00184571 /* ERDataCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ERDataCollection.h; sourceTree = "<group>"; };
+		F703286F2078D1FB00184571 /* ERDataCollection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ERDataCollection.m; sourceTree = "<group>"; };
 		F795988520787FE000575E23 /* EnvironmentReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnvironmentReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F795988820787FE000575E23 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F795988920787FE000575E23 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -58,7 +69,6 @@
 		F79598A820787FE100575E23 /* EnvironmentReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnvironmentReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F79598AC20787FE100575E23 /* EnvironmentReaderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnvironmentReaderUITests.m; sourceTree = "<group>"; };
 		F79598AE20787FE100575E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F79598BA2078805D00575E23 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		F79598D62078AD9900575E23 /* ERNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ERNetworkManager.h; sourceTree = "<group>"; };
 		F79598D72078AD9900575E23 /* ERNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ERNetworkManager.m; sourceTree = "<group>"; };
 		F79598D92078AEBF00575E23 /* ERDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ERDataManager.h; sourceTree = "<group>"; };
@@ -112,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				F795988720787FE000575E23 /* EnvironmentReader */,
-				F79598BA2078805D00575E23 /* Podfile */,
 				F79598A020787FE100575E23 /* EnvironmentReaderTests */,
 				F79598AB20787FE100575E23 /* EnvironmentReaderUITests */,
 				F795988620787FE000575E23 /* Products */,
@@ -139,14 +148,12 @@
 				F795988B20787FE000575E23 /* ViewController.h */,
 				F795988C20787FE000575E23 /* ViewController.m */,
 				F795988E20787FE000575E23 /* Main.storyboard */,
-				F795989120787FE000575E23 /* Assets.xcassets */,
-				F795989320787FE000575E23 /* LaunchScreen.storyboard */,
-				F795989620787FE000575E23 /* Info.plist */,
-				F795989720787FE000575E23 /* main.m */,
 				F79598D62078AD9900575E23 /* ERNetworkManager.h */,
 				F79598D72078AD9900575E23 /* ERNetworkManager.m */,
 				F79598D92078AEBF00575E23 /* ERDataManager.h */,
 				F79598DA2078AEBF00575E23 /* ERDataManager.m */,
+				F79598E22078C6E900575E23 /* DataModels */,
+				F79598E32078C70500575E23 /* SupportingFiles */,
 			);
 			path = EnvironmentReader;
 			sourceTree = "<group>";
@@ -167,6 +174,32 @@
 				F79598AE20787FE100575E23 /* Info.plist */,
 			);
 			path = EnvironmentReaderUITests;
+			sourceTree = "<group>";
+		};
+		F79598E22078C6E900575E23 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				F703285E2078C84700184571 /* ERRegion.h */,
+				F703285F2078C84700184571 /* ERRegion.m */,
+				F70328652078CDA500184571 /* ERAirData.h */,
+				F70328662078CDA500184571 /* ERAirData.m */,
+				F703286B2078D01E00184571 /* ERDailyData.h */,
+				F703286C2078D01E00184571 /* ERDailyData.m */,
+				F703286E2078D1FB00184571 /* ERDataCollection.h */,
+				F703286F2078D1FB00184571 /* ERDataCollection.m */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		F79598E32078C70500575E23 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F795989120787FE000575E23 /* Assets.xcassets */,
+				F795989320787FE000575E23 /* LaunchScreen.storyboard */,
+				F795989620787FE000575E23 /* Info.plist */,
+				F795989720787FE000575E23 /* main.m */,
+			);
+			name = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +308,6 @@
 			files = (
 				F795989520787FE000575E23 /* LaunchScreen.storyboard in Resources */,
 				F795989220787FE000575E23 /* Assets.xcassets in Resources */,
-				F79598BB2078805D00575E23 /* Podfile in Resources */,
 				F795989020787FE000575E23 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,11 +354,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F70328702078D1FB00184571 /* ERDataCollection.m in Sources */,
+				F70328602078C84700184571 /* ERRegion.m in Sources */,
 				F79598DB2078AEBF00575E23 /* ERDataManager.m in Sources */,
 				F795988D20787FE000575E23 /* ViewController.m in Sources */,
+				F703286D2078D01E00184571 /* ERDailyData.m in Sources */,
 				F79598D82078AD9900575E23 /* ERNetworkManager.m in Sources */,
 				F795989820787FE000575E23 /* main.m in Sources */,
 				F795988A20787FE000575E23 /* AppDelegate.m in Sources */,
+				F70328672078CDA500184571 /* ERAirData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

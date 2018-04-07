@@ -10,9 +10,14 @@
 
 @implementation MockLocalDataHandler
 
-- (NSString *)getData
+- (BOOL)saveData:(nonnull id)data toPath:(nonnull NSString *)pathString
 {
-    return NSStringFromClass([self class]);
+    return YES;
+}
+
+- (nullable id)getDataFromPath:(nonnull NSString *)pathString
+{
+    return pathString;
 }
 
 @end
