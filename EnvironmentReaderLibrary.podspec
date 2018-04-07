@@ -12,7 +12,7 @@ Pod::Spec.new do |spec|
 
     spec.source                 = { :git => 'https://github/***.git', :tag => '0.0.1' }
     spec.ios.deployment_target  = '8.0'
-    spec.source_files           = 'EnvironmentReaderLibrary', 'EnvironmentReaderLibrary/*.{h,m}'
+    spec.source_files           = 'EnvironmentReaderLibrary/*.{h,m}'
     spec.requires_arc           = true
 
     spec.subspec 'Source' do |ss|

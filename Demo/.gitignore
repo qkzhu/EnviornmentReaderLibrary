@@ -13,6 +13,7 @@ build/
 !default.perspectivev3
 xcuserdata/
 xcuserdatad/
+*.xcworkspace
 *.xcworkspace/xcuserdata/*
 *.xccheckout
 profile

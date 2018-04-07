@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <NetworkHandler.h>
 
 @interface ViewController ()
 
@@ -16,7 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    NetworkHandler *nh = [NetworkHandler new];
+    [nh GET:@"test" parameters:nil success:^(id  _Nullable responseObject) {
+        NSLog(@"successful");
+    } failure:^(NSError *error) {
+        NSLog(@"failure");
+    }];
 }
 
 
