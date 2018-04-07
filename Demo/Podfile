@@ -1,0 +1,14 @@
+platform :ios, '10.0'
+
+def available_pods
+
+    # ignore all warnings from all pods
+    inhibit_all_warnings!
+
+    pod 'EnvironmentReaderLibrary', :path => '../'
+end
+
+
+target 'EnvironmentReader' do
+    available_pods
+end
