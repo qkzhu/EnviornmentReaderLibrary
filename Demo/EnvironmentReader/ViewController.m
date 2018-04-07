@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-#import <NetworkHandler.h>
+#import "ERNetworkManager.h"
+#import "ERDataManager.h"
 
 @interface ViewController ()
 
@@ -15,15 +16,19 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
-    NetworkHandler *nh = [NetworkHandler new];
-    [nh GET:@"test" parameters:nil success:^(id  _Nullable responseObject) {
-        NSLog(@"successful");
-    } failure:^(NSError *error) {
+    ERNetworkManager *nm = [ERNetworkManager new];
+    [nm fetchLatestEnviromentDataOnSuccess:^(id  _Nullable responseObject) {
+         NSLog(@"successful");
+    } failure:^(NSError * _Nonnull error) {
         NSLog(@"failure");
     }];
+    
+    ERDataManager *dm = [ERDataManager new];
+    NSLog(@"received data: %@", [dm getData]);
 }
 
 

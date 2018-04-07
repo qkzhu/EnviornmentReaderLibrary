@@ -1,5 +1,5 @@
 //
-//  NetworkHandler.h
+//  MockNetworkHandler.h
 //  EnvironmentReaderLibrary
 //
 //  Created by QianKun on 7/4/18.
@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "NetworkInterface.h"
 
-@interface NetworkHandler : NSObject <NetworkInterface>
+NS_ASSUME_NONNULL_BEGIN
+
+@interface MockNetworkHandler : NSObject <NetworkInterface>
 
 @end
+
+NS_ASSUME_NONNULL_END

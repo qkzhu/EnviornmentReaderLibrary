@@ -17,6 +17,8 @@
 		F79598A220787FE100575E23 /* EnvironmentReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F79598A120787FE100575E23 /* EnvironmentReaderTests.m */; };
 		F79598AD20787FE100575E23 /* EnvironmentReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F79598AC20787FE100575E23 /* EnvironmentReaderUITests.m */; };
 		F79598BB2078805D00575E23 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F79598BA2078805D00575E23 /* Podfile */; };
+		F79598D82078AD9900575E23 /* ERNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F79598D72078AD9900575E23 /* ERNetworkManager.m */; };
+		F79598DB2078AEBF00575E23 /* ERDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F79598DA2078AEBF00575E23 /* ERDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,10 @@
 		F79598AC20787FE100575E23 /* EnvironmentReaderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnvironmentReaderUITests.m; sourceTree = "<group>"; };
 		F79598AE20787FE100575E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F79598BA2078805D00575E23 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		F79598D62078AD9900575E23 /* ERNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ERNetworkManager.h; sourceTree = "<group>"; };
+		F79598D72078AD9900575E23 /* ERNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ERNetworkManager.m; sourceTree = "<group>"; };
+		F79598D92078AEBF00575E23 /* ERDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ERDataManager.h; sourceTree = "<group>"; };
+		F79598DA2078AEBF00575E23 /* ERDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ERDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,10 @@
 				F795989320787FE000575E23 /* LaunchScreen.storyboard */,
 				F795989620787FE000575E23 /* Info.plist */,
 				F795989720787FE000575E23 /* main.m */,
+				F79598D62078AD9900575E23 /* ERNetworkManager.h */,
+				F79598D72078AD9900575E23 /* ERNetworkManager.m */,
+				F79598D92078AEBF00575E23 /* ERDataManager.h */,
+				F79598DA2078AEBF00575E23 /* ERDataManager.m */,
 			);
 			path = EnvironmentReader;
 			sourceTree = "<group>";
@@ -312,7 +322,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F79598DB2078AEBF00575E23 /* ERDataManager.m in Sources */,
 				F795988D20787FE000575E23 /* ViewController.m in Sources */,
+				F79598D82078AD9900575E23 /* ERNetworkManager.m in Sources */,
 				F795989820787FE000575E23 /* main.m in Sources */,
 				F795988A20787FE000575E23 /* AppDelegate.m in Sources */,
 			);
@@ -487,7 +499,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYVJL76GLQ;
 				INFOPLIST_FILE = EnvironmentReader/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkzhu.EnvironmentReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -502,7 +517,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYVJL76GLQ;
 				INFOPLIST_FILE = EnvironmentReader/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkzhu.EnvironmentReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -516,7 +534,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYVJL76GLQ;
 				INFOPLIST_FILE = EnvironmentReaderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkzhu.EnvironmentReaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -531,7 +553,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYVJL76GLQ;
 				INFOPLIST_FILE = EnvironmentReaderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkzhu.EnvironmentReaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -545,7 +571,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYVJL76GLQ;
 				INFOPLIST_FILE = EnvironmentReaderUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkzhu.EnvironmentReaderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -559,7 +589,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYVJL76GLQ;
 				INFOPLIST_FILE = EnvironmentReaderUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkzhu.EnvironmentReaderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

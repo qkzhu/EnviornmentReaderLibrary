@@ -11,9 +11,11 @@
 		F795982820787B5500575E23 /* EnvironmentReaderLibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F795982720787B5500575E23 /* EnvironmentReaderLibraryTests.m */; };
 		F795982A20787B5500575E23 /* EnvironmentReaderLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = F795981C20787B5500575E23 /* EnvironmentReaderLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F795983420787B9A00575E23 /* EnvironmentReaderLibrary.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F795983320787B9A00575E23 /* EnvironmentReaderLibrary.podspec */; };
-		F795983920787BE400575E23 /* NetworkHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = F795983620787BE400575E23 /* NetworkHandler.h */; };
-		F795983A20787BE400575E23 /* NetworkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F795983720787BE400575E23 /* NetworkHandler.m */; };
 		F795983B20787BE400575E23 /* NetworkInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = F795983820787BE400575E23 /* NetworkInterface.h */; };
+		F79598C820789CE600575E23 /* MockLocalDataHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = F79598C620789CE600575E23 /* MockLocalDataHandler.h */; };
+		F79598C920789CE600575E23 /* MockLocalDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F79598C720789CE600575E23 /* MockLocalDataHandler.m */; };
+		F79598D020789EF400575E23 /* MockNetworkHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = F79598CE20789EF400575E23 /* MockNetworkHandler.h */; };
+		F79598D120789EF400575E23 /* MockNetworkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F79598CF20789EF400575E23 /* MockNetworkHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +36,12 @@
 		F795982720787B5500575E23 /* EnvironmentReaderLibraryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnvironmentReaderLibraryTests.m; sourceTree = "<group>"; };
 		F795982920787B5500575E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F795983320787B9A00575E23 /* EnvironmentReaderLibrary.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EnvironmentReaderLibrary.podspec; sourceTree = "<group>"; };
-		F795983620787BE400575E23 /* NetworkHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkHandler.h; sourceTree = "<group>"; };
-		F795983720787BE400575E23 /* NetworkHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkHandler.m; sourceTree = "<group>"; };
 		F795983820787BE400575E23 /* NetworkInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkInterface.h; sourceTree = "<group>"; };
+		F79598C520789C5D00575E23 /* LocalDataInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalDataInterface.h; sourceTree = "<group>"; };
+		F79598C620789CE600575E23 /* MockLocalDataHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockLocalDataHandler.h; sourceTree = "<group>"; };
+		F79598C720789CE600575E23 /* MockLocalDataHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockLocalDataHandler.m; sourceTree = "<group>"; };
+		F79598CE20789EF400575E23 /* MockNetworkHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockNetworkHandler.h; sourceTree = "<group>"; };
+		F79598CF20789EF400575E23 /* MockNetworkHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MockNetworkHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +87,11 @@
 			children = (
 				F795981C20787B5500575E23 /* EnvironmentReaderLibrary.h */,
 				F795983820787BE400575E23 /* NetworkInterface.h */,
-				F795983620787BE400575E23 /* NetworkHandler.h */,
-				F795983720787BE400575E23 /* NetworkHandler.m */,
+				F79598CE20789EF400575E23 /* MockNetworkHandler.h */,
+				F79598CF20789EF400575E23 /* MockNetworkHandler.m */,
+				F79598C520789C5D00575E23 /* LocalDataInterface.h */,
+				F79598C620789CE600575E23 /* MockLocalDataHandler.h */,
+				F79598C720789CE600575E23 /* MockLocalDataHandler.m */,
 				F795981D20787B5500575E23 /* Info.plist */,
 			);
 			path = EnvironmentReaderLibrary;
@@ -105,8 +113,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F795983920787BE400575E23 /* NetworkHandler.h in Headers */,
 				F795982A20787B5500575E23 /* EnvironmentReaderLibrary.h in Headers */,
+				F79598D020789EF400575E23 /* MockNetworkHandler.h in Headers */,
+				F79598C820789CE600575E23 /* MockLocalDataHandler.h in Headers */,
 				F795983B20787BE400575E23 /* NetworkInterface.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,7 +217,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F795983A20787BE400575E23 /* NetworkHandler.m in Sources */,
+				F79598D120789EF400575E23 /* MockNetworkHandler.m in Sources */,
+				F79598C920789CE600575E23 /* MockLocalDataHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
