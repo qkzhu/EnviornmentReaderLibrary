@@ -15,6 +15,7 @@
 		F795989820787FE000575E23 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F795989720787FE000575E23 /* main.m */; };
 		F79598A220787FE100575E23 /* EnvironmentReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F79598A120787FE100575E23 /* EnvironmentReaderTests.m */; };
 		F79598AD20787FE100575E23 /* EnvironmentReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F79598AC20787FE100575E23 /* EnvironmentReaderUITests.m */; };
+		F79598BB2078805D00575E23 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F79598BA2078805D00575E23 /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		F79598A820787FE100575E23 /* EnvironmentReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnvironmentReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F79598AC20787FE100575E23 /* EnvironmentReaderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnvironmentReaderUITests.m; sourceTree = "<group>"; };
 		F79598AE20787FE100575E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F79598BA2078805D00575E23 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				F795988720787FE000575E23 /* EnvironmentReader */,
+				F79598BA2078805D00575E23 /* Podfile */,
 				F79598A020787FE100575E23 /* EnvironmentReaderTests */,
 				F79598AB20787FE100575E23 /* EnvironmentReaderUITests */,
 				F795988620787FE000575E23 /* Products */,
@@ -237,6 +240,7 @@
 			files = (
 				F795989520787FE000575E23 /* LaunchScreen.storyboard in Resources */,
 				F795989220787FE000575E23 /* Assets.xcassets in Resources */,
+				F79598BB2078805D00575E23 /* Podfile in Resources */,
 				F795989020787FE000575E23 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
