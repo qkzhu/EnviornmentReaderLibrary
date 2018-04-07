@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB8B63BE24977B4D55078E1E /* libPods-EnvironmentReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4CC3AF116DDBEC8232B705B /* libPods-EnvironmentReader.a */; };
 		F795988A20787FE000575E23 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F795988920787FE000575E23 /* AppDelegate.m */; };
 		F795988D20787FE000575E23 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F795988C20787FE000575E23 /* ViewController.m */; };
 		F795989020787FE000575E23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F795988E20787FE000575E23 /* Main.storyboard */; };
@@ -36,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32DB54662F88EDD9FF236758 /* Pods-EnvironmentReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnvironmentReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EnvironmentReader/Pods-EnvironmentReader.debug.xcconfig"; sourceTree = "<group>"; };
+		905379BDB2F024989036019E /* Pods-EnvironmentReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnvironmentReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-EnvironmentReader/Pods-EnvironmentReader.release.xcconfig"; sourceTree = "<group>"; };
+		B4CC3AF116DDBEC8232B705B /* libPods-EnvironmentReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EnvironmentReader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F795988520787FE000575E23 /* EnvironmentReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnvironmentReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F795988820787FE000575E23 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F795988920787FE000575E23 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -60,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB8B63BE24977B4D55078E1E /* libPods-EnvironmentReader.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +85,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64083B577762F8C8FE5AB4E9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32DB54662F88EDD9FF236758 /* Pods-EnvironmentReader.debug.xcconfig */,
+				905379BDB2F024989036019E /* Pods-EnvironmentReader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		900161FFACFA225A39F6A199 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4CC3AF116DDBEC8232B705B /* libPods-EnvironmentReader.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F795987C20787FE000575E23 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +110,8 @@
 				F79598A020787FE100575E23 /* EnvironmentReaderTests */,
 				F79598AB20787FE100575E23 /* EnvironmentReaderUITests */,
 				F795988620787FE000575E23 /* Products */,
+				64083B577762F8C8FE5AB4E9 /* Pods */,
+				900161FFACFA225A39F6A199 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +166,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F79598B120787FE100575E23 /* Build configuration list for PBXNativeTarget "EnvironmentReader" */;
 			buildPhases = (
+				4A51AAAD1EDAB2D1147CA61C /* [CP] Check Pods Manifest.lock */,
 				F795988120787FE000575E23 /* Sources */,
 				F795988220787FE000575E23 /* Frameworks */,
 				F795988320787FE000575E23 /* Resources */,
@@ -260,6 +285,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A51AAAD1EDAB2D1147CA61C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EnvironmentReader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F795988120787FE000575E23 /* Sources */ = {
@@ -435,15 +481,13 @@
 		};
 		F79598B220787FE100575E23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32DB54662F88EDD9FF236758 /* Pods-EnvironmentReader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYVJL76GLQ;
 				INFOPLIST_FILE = EnvironmentReader/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkzhu.EnvironmentReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -452,15 +496,13 @@
 		};
 		F79598B320787FE100575E23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 905379BDB2F024989036019E /* Pods-EnvironmentReader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYVJL76GLQ;
 				INFOPLIST_FILE = EnvironmentReader/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkzhu.EnvironmentReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -474,11 +516,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYVJL76GLQ;
 				INFOPLIST_FILE = EnvironmentReaderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkzhu.EnvironmentReaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -493,11 +531,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYVJL76GLQ;
 				INFOPLIST_FILE = EnvironmentReaderTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkzhu.EnvironmentReaderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -511,11 +545,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYVJL76GLQ;
 				INFOPLIST_FILE = EnvironmentReaderUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkzhu.EnvironmentReaderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -529,11 +559,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYVJL76GLQ;
 				INFOPLIST_FILE = EnvironmentReaderUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkzhu.EnvironmentReaderUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
