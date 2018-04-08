@@ -143,27 +143,25 @@
     
     
     [self.networkMgr fetchLatestEnviromentDataOnSuccess:^(id  _Nullable responseObject) {
-        if (!weakSelf.isQuerying)
-        {
-            [alertVC dismissViewControllerAnimated:YES completion:nil];
-            return;
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [alertVC dismissViewControllerAnimated:YES completion:^{
+                [weakSelf refreshDataFromLocal];
+                weakSelf.isQuerying = NO;
+            }];
+        });
         
         [weakSelf.dataMgr saveData:responseObject onComplete:^(BOOL success) {
             [weakSelf refreshDataFromLocal];
             weakSelf.isQuerying = NO;
-            [alertVC dismissViewControllerAnimated:YES completion:nil];
         }];
     } failure:^(NSError * _Nonnull error) {
         
-        [alertVC dismissViewControllerAnimated:YES completion:nil];
-        
-        if (!weakSelf.isQuerying) { return; }
-        
         dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf promptAlertVCToRetryFetch];
-            weakSelf.isQuerying = NO;
-            [alertVC dismissViewControllerAnimated:YES completion:nil];
+            [alertVC dismissViewControllerAnimated:YES completion:^{
+                if (!weakSelf.isQuerying) { [weakSelf refreshDataFromLocal];  }
+                else { [weakSelf promptAlertVCToRetryFetch]; }
+                weakSelf.isQuerying = NO;
+            }];
         });
     }];
 }
