@@ -10,6 +10,7 @@
 #import <EnvironmentReaderLibrary/NetworkInterface.h>
 #import <EnvironmentReaderLibrary/AFNetworkHandler.h>
 #import "Constants.h"
+#import "ERHelper.h"
 
 @interface ERNetworkManager()
 
@@ -33,8 +34,15 @@
                            success:(nullable void (^)(id _Nullable responseObject))success
                            failure:(nullable void (^)(NSError *error))failure;
 {
+    NSDictionary *param;
+    if (queryDate)
+    {
+        NSString *dateStr = [ERHelper convertDate:queryDate toStringWithFormat:DATE_FORMAT_QUERY];
+        if (dateStr) { param = @{@"date":dateStr}; }
+    }
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self.networkHandler GET:END_POINT_URL parameters:nil success:^(id  _Nullable responseObject) {
+        [self.networkHandler GET:END_POINT_URL parameters:param success:^(id  _Nullable responseObject) {
             NSError *error;
             NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:&error];
             if (responseObject) { success(responseDic); }

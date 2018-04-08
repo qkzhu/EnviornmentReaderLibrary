@@ -99,7 +99,7 @@
 {
     ERHistoryVC *historyVC = [ERHistoryVC new];
     historyVC.dailyData = self.allData.dailyData;
-    historyVC.vType = self.currViewType;
+    historyVC.vType = self.currViewType == eViewTypeMap ? eViewTypeHome : self.currViewType;
     [self.navigationController pushViewController:historyVC animated:YES];
 }
 

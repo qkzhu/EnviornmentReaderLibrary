@@ -39,7 +39,7 @@ static NSString *const kPM25Data = @"pm25_twenty_four_hourly";
     if (self == object) { return YES; }
     if (![object isKindOfClass:[self class]]) { return NO; }
     
-    return [self.updateDate isEqual:((ERDailyData *)object).updateDate];
+    return [self.updateDate compare:((ERDailyData *)object).updateDate];
 }
 
 #pragma mark - private functions

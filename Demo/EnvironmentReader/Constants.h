@@ -13,6 +13,7 @@
 #define PLIST_NAME @"EnviornmentReaderDB.plist"
 #define DATE_FORMAT_SERVER @"yyyy-MM-dd'T'HH:mm:ssZZZZZ"
 #define DATE_FORMAT_DISPLAY @"dd/MM/yyyy HH:mm:ss a"
+#define DATE_FORMAT_QUERY @"yyyy-MM-dd"
 
 typedef enum {
     eViewTypeHome = 100, eViewTypePSI, eViewTypePM25, eViewTypeMap

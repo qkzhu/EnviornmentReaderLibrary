@@ -54,7 +54,10 @@ static NSString *const kItems = @"items";
             [dailyData addObject:[ERDailyData parse:dic]];
         }
         [dailyData sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-            return obj1 > obj2;
+            ERDailyData *d1 = (ERDailyData *)obj1;
+            ERDailyData *d2 = (ERDailyData *)obj2;
+            
+            return [d1 isEqual:d2];
         }];
         self.dailyData = dailyData;
     }
