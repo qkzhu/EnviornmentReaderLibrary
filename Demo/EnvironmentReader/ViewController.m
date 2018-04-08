@@ -16,15 +16,16 @@
 #import "Constants.h"
 #import "ERHistoryVC.h"
 
+
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *viewDetailHolder;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttons;
 
 @property (strong, nonatomic) ERNetworkManager *networkMgr;
 @property (strong, nonatomic) ERDataManager *dataMgr;
 @property (assign, nonatomic) eViewType currViewType;
 @property (strong, nonatomic) ERDataCollection *allData;
-
 @property (strong, nonatomic) DisplayDataVC *displayVC;
 
 @end
@@ -36,7 +37,9 @@
 {
     [super viewDidLoad];
     
+    [self updateButtonsUI];
     self.currViewType = eViewTypeHome;
+    [self updateButtonBackground];
     [self refreshDataOnline];
 }
 
@@ -50,18 +53,21 @@
 - (IBAction)btnHomeTapped:(id)sender
 {
     self.currViewType = eViewTypeHome;
+    [self updateButtonBackground];
     [self displayData];
 }
 
 - (IBAction)btnPSITapped:(id)sender
 {
     self.currViewType = eViewTypePSI;
+    [self updateButtonBackground];
     [self displayData];
 }
 
 - (IBAction)btnPS25Tapped:(id)sender
 {
     self.currViewType = eViewTypePM25;
+    [self updateButtonBackground];
     [self displayData];
 }
 
@@ -107,6 +113,15 @@
 }
 
 #pragma mark - Other Private functions
+- (void)updateButtonsUI
+{
+    for (UIButton *button in self.buttons)
+    {
+        button.layer.borderColor = [UIColor.lightGrayColor CGColor];
+        button.layer.borderWidth = .5;
+    }
+}
+
 - (void)refreshDataOnline
 {
     __weak typeof(self) weakSelf = self;
@@ -162,4 +177,15 @@
     self.navigationItem.title = title;
 }
 
+- (void)updateButtonBackground
+{
+    UIColor *unSelectedBg = UIColor.whiteColor;
+    UIColor *selectedBg = UIColor.lightGrayColor;
+    
+    for (UIButton *button in self.buttons)
+    {
+        if (button.tag == (int)self.currViewType) { button.backgroundColor = selectedBg; }
+        else { button.backgroundColor = unSelectedBg; }
+    }
+}
 @end

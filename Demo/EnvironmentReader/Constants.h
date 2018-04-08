@@ -15,7 +15,7 @@
 #define DATE_FORMAT_DISPLAY @"dd/MM/yyyy HH:mm:ss a"
 
 typedef enum {
-    eViewTypeHome, eViewTypePSI, eViewTypePM25
+    eViewTypeHome = 100, eViewTypePSI, eViewTypePM25
 } eViewType;
 
 #endif /* Constants_h */

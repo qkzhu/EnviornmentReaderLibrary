@@ -32,6 +32,12 @@ static NSString *const CellID = @"ERDataCellIdentifier";
  
     [self setupTableView];
     self.lblTitle.text = self.detailTitle;
+    if (self.navigationController)
+    {
+        self.navigationItem.title = self.vType == eViewTypeHome ? @"Nation Data"
+        : self.vType == eViewTypePSI ? @"PSI (Hourly)"
+        : @"PM2.5 (Hourly)";
+    }
 }
 
 - (void)setupTableView

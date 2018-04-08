@@ -23,25 +23,25 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="nDu-Ke-YUf">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nDu-Ke-YUf">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grO-Qx-rca">
-                                        <rect key="frame" x="0.0" y="0.0" width="123.5" height="50"/>
+                                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grO-Qx-rca">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
                                         <state key="normal" title="Home"/>
                                         <connections>
                                             <action selector="btnHomeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B2I-TI-Gns"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhq-2v-B9t">
-                                        <rect key="frame" x="125.5" y="0.0" width="124" height="50"/>
+                                    <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhq-2v-B9t">
+                                        <rect key="frame" x="125" y="0.0" width="125" height="50"/>
                                         <state key="normal" title="PSI"/>
                                         <connections>
                                             <action selector="btnPSITapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GIy-Oa-Xkd"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLC-Wo-dax">
-                                        <rect key="frame" x="251.5" y="0.0" width="123.5" height="50"/>
+                                    <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLC-Wo-dax">
+                                        <rect key="frame" x="250" y="0.0" width="125" height="50"/>
                                         <state key="normal" title="PM25"/>
                                         <connections>
                                             <action selector="btnPS25Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5dW-Sb-Rrm"/>
@@ -94,6 +94,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="viewDetailHolder" destination="fK3-Hu-3qQ" id="6Ha-ME-gob"/>
+                        <outletCollection property="buttons" destination="grO-Qx-rca" id="Ybo-tA-hCN"/>
+                        <outletCollection property="buttons" destination="Zhq-2v-B9t" id="gyF-xy-uZF"/>
+                        <outletCollection property="buttons" destination="GLC-Wo-dax" id="jzL-Ml-Ugx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
