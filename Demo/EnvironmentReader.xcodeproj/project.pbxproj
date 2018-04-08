@@ -28,6 +28,10 @@
 		F7A50656207A149F00F1CD6B /* ERMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A50655207A149F00F1CD6B /* ERMapVC.m */; };
 		F7A50658207A155700F1CD6B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A50657207A155700F1CD6B /* MapKit.framework */; };
 		F7A5065B207A1B1000F1CD6B /* ERMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A5065A207A1B1000F1CD6B /* ERMapAnnotation.m */; };
+		F7A50661207A790400F1CD6B /* Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.18.18.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A5065D207A790400F1CD6B /* Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.18.18.png */; };
+		F7A50662207A790400F1CD6B /* Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.18.23.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A5065E207A790400F1CD6B /* Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.18.23.png */; };
+		F7A50663207A790400F1CD6B /* Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.18.29.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A5065F207A790400F1CD6B /* Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.18.29.png */; };
+		F7A50664207A790400F1CD6B /* Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.19.11.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A50660207A790400F1CD6B /* Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.19.11.png */; };
 		F7F11D102079D76D00D0FF21 /* ERHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F11D0F2079D76D00D0FF21 /* ERHistoryVC.m */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +96,10 @@
 		F7A50657207A155700F1CD6B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F7A50659207A1B1000F1CD6B /* ERMapAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ERMapAnnotation.h; sourceTree = "<group>"; };
 		F7A5065A207A1B1000F1CD6B /* ERMapAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ERMapAnnotation.m; sourceTree = "<group>"; };
+		F7A5065D207A790400F1CD6B /* Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.18.18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.18.18.png"; sourceTree = "<group>"; };
+		F7A5065E207A790400F1CD6B /* Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.18.23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.18.23.png"; sourceTree = "<group>"; };
+		F7A5065F207A790400F1CD6B /* Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.18.29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.18.29.png"; sourceTree = "<group>"; };
+		F7A50660207A790400F1CD6B /* Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.19.11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.19.11.png"; sourceTree = "<group>"; };
 		F7F11D0E2079D76D00D0FF21 /* ERHistoryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ERHistoryVC.h; sourceTree = "<group>"; };
 		F7F11D0F2079D76D00D0FF21 /* ERHistoryVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ERHistoryVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +155,7 @@
 				F795988720787FE000575E23 /* EnvironmentReader */,
 				F79598A020787FE100575E23 /* EnvironmentReaderTests */,
 				F79598AB20787FE100575E23 /* EnvironmentReaderUITests */,
+				F7A5065C207A78E700F1CD6B /* Screenshots */,
 				F795988620787FE000575E23 /* Products */,
 				64083B577762F8C8FE5AB4E9 /* Pods */,
 				900161FFACFA225A39F6A199 /* Frameworks */,
@@ -236,6 +245,17 @@
 				F795989720787FE000575E23 /* main.m */,
 			);
 			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		F7A5065C207A78E700F1CD6B /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				F7A5065D207A790400F1CD6B /* Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.18.18.png */,
+				F7A5065E207A790400F1CD6B /* Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.18.23.png */,
+				F7A5065F207A790400F1CD6B /* Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.18.29.png */,
+				F7A50660207A790400F1CD6B /* Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.19.11.png */,
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,8 +363,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F795989520787FE000575E23 /* LaunchScreen.storyboard in Resources */,
+				F7A50663207A790400F1CD6B /* Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.18.29.png in Resources */,
+				F7A50662207A790400F1CD6B /* Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.18.23.png in Resources */,
 				F795989220787FE000575E23 /* Assets.xcassets in Resources */,
 				F795989020787FE000575E23 /* Main.storyboard in Resources */,
+				F7A50664207A790400F1CD6B /* Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.19.11.png in Resources */,
+				F7A50661207A790400F1CD6B /* Simulator Screen Shot - iPhone 7 - 2018-04-09 at 00.18.18.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
