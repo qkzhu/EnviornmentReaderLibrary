@@ -27,24 +27,32 @@
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grO-Qx-rca">
-                                        <rect key="frame" x="0.0" y="0.0" width="125" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="50"/>
                                         <state key="normal" title="Home"/>
                                         <connections>
                                             <action selector="btnHomeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B2I-TI-Gns"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhq-2v-B9t">
-                                        <rect key="frame" x="125" y="0.0" width="125" height="50"/>
+                                        <rect key="frame" x="94" y="0.0" width="93.5" height="50"/>
                                         <state key="normal" title="PSI"/>
                                         <connections>
                                             <action selector="btnPSITapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GIy-Oa-Xkd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLC-Wo-dax">
-                                        <rect key="frame" x="250" y="0.0" width="125" height="50"/>
+                                        <rect key="frame" x="187.5" y="0.0" width="94" height="50"/>
                                         <state key="normal" title="PM25"/>
                                         <connections>
                                             <action selector="btnPS25Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5dW-Sb-Rrm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4r-QR-ejN">
+                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="50"/>
+                                        <state key="normal" title="Map"/>
+                                        <connections>
+                                            <action selector="btnMapTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sld-JL-0LK"/>
+                                            <segue destination="nxw-IA-3Xm" kind="show" identifier="segueMapView" id="Ldw-Je-biL"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -97,11 +105,53 @@
                         <outletCollection property="buttons" destination="grO-Qx-rca" id="Ybo-tA-hCN"/>
                         <outletCollection property="buttons" destination="Zhq-2v-B9t" id="gyF-xy-uZF"/>
                         <outletCollection property="buttons" destination="GLC-Wo-dax" id="jzL-Ml-Ugx"/>
+                        <outletCollection property="buttons" destination="W4r-QR-ejN" id="MQM-hk-Bna"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="972" y="33.733133433283363"/>
+        </scene>
+        <!--MapVC-->
+        <scene sceneID="YEE-Qn-tTu">
+            <objects>
+                <viewController id="nxw-IA-3Xm" customClass="ERMapVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e8x-3C-D5i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gu5-vF-vHr">
+                                <rect key="frame" x="16" y="183" width="343" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="02i-jv-sF5"/>
+                                </constraints>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zu-CF-KYl">
+                                <rect key="frame" x="16" y="146" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9zu-CF-KYl" firstAttribute="leading" secondItem="N0f-5g-5gf" secondAttribute="leading" constant="16" id="09v-qF-SJq"/>
+                            <constraint firstItem="gu5-vF-vHr" firstAttribute="top" secondItem="9zu-CF-KYl" secondAttribute="bottom" constant="16" id="5Br-3d-fqL"/>
+                            <constraint firstItem="N0f-5g-5gf" firstAttribute="trailing" secondItem="9zu-CF-KYl" secondAttribute="trailing" constant="16" id="PzN-5i-ZFm"/>
+                            <constraint firstItem="N0f-5g-5gf" firstAttribute="trailing" secondItem="gu5-vF-vHr" secondAttribute="trailing" constant="16" id="S5C-ug-kCB"/>
+                            <constraint firstItem="gu5-vF-vHr" firstAttribute="leading" secondItem="N0f-5g-5gf" secondAttribute="leading" constant="16" id="fC2-hI-u1r"/>
+                            <constraint firstItem="gu5-vF-vHr" firstAttribute="centerY" secondItem="e8x-3C-D5i" secondAttribute="centerY" id="tbs-Nu-gge"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="N0f-5g-5gf"/>
+                    </view>
+                    <connections>
+                        <outlet property="lblTitle" destination="9zu-CF-KYl" id="bcM-96-rt0"/>
+                        <outlet property="mapView" destination="gu5-vF-vHr" id="Qdm-c4-kL2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h01-Yn-Sln" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="972" y="843"/>
         </scene>
         <!--Display DataVC-->
         <scene sceneID="QcU-N2-dYg">
