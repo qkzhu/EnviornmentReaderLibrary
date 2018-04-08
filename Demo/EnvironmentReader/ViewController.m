@@ -15,7 +15,7 @@
 #import "ERHelper.h"
 #import "Constants.h"
 #import "ERHistoryVC.h"
-
+#import "ERMapVC.h"
 
 @interface ViewController ()
 
@@ -50,6 +50,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"segueMapView"])
+    {
+        ERMapVC *mapVC = (ERMapVC *)segue.destinationViewController;
+        
+        ERDailyData *latestData = self.allData.dailyData.firstObject;
+        NSString *updateDateString = [ERHelper convertDate:latestData.updateDate toStringWithFormat:DATE_FORMAT_DISPLAY];
+        NSString *titleStr = updateDateString ? [NSString stringWithFormat:@"Last Result: %@", updateDateString] : @"";
+        [mapVC updateWithTitle:titleStr withData:latestData regionData:self.allData.regionData];
+    }
+}
 #pragma mark - IBActions
 
 - (IBAction)btnHomeTapped:(id)sender
@@ -71,6 +83,11 @@
     self.currViewType = eViewTypePM25;
     [self updateButtonBackground];
     [self displayData];
+}
+
+- (IBAction)btnMapTapped:(id)sender
+{
+    self.currViewType = eViewTypeMap;
 }
 
 - (IBAction)btnRefreshTapped:(id)sender
@@ -202,20 +219,25 @@
     ERDailyData *latestData = self.allData.dailyData.firstObject;
     NSString *updateDateString = [ERHelper convertDate:latestData.updateDate toStringWithFormat:DATE_FORMAT_DISPLAY];
     NSString *titleStr = updateDateString ? [NSString stringWithFormat:@"Last Result: %@", updateDateString] : @"";
-    [self.displayVC updateWithTitle:titleStr withData:latestData forViewType:self.currViewType];
     
     switch (self.currViewType)
     {
         case eViewTypeHome:
+            [self.displayVC updateWithTitle:titleStr withData:latestData forViewType:self.currViewType];
             [self updateNavibarTitle:@"Enviornment Reader"];
             break;
             
         case eViewTypePSI:
+            [self.displayVC updateWithTitle:titleStr withData:latestData forViewType:self.currViewType];
             [self updateNavibarTitle:@"PSI (Hourly)"];
             break;
             
         case eViewTypePM25:
+            [self.displayVC updateWithTitle:titleStr withData:latestData forViewType:self.currViewType];
             [self updateNavibarTitle:@"PM2.5 (Hourly)"];
+            break;
+            
+        case eViewTypeMap:
             break;
     }
 }
