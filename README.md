@@ -10,7 +10,15 @@ Library project (Utilities): EnvironmentReaderLibrary - It is an iOS framework p
         success:(nullable void (^)(id _Nullable responseObject))success
         failure:(nullable void (^)(NSError *error))failure;
     ```
-
+    * Use API: 
+        ```objective-c
+        AFNetworkHandler *networkHandler = [AFNetworkHandler new];
+        [networkHandler GET:@"https://data.gov.sg/dataset/psi" parameters:param success:^(id  _Nullable responseObject) {
+          // success block with received objective
+        } failure:^(NSError * _Nonnull error) {
+          // failure block with error
+        }];
+        ```
 * Local Data API:
   1 Save Data to local: 
     * data: any type object
@@ -18,13 +26,23 @@ Library project (Utilities): EnvironmentReaderLibrary - It is an iOS framework p
     ```objective-c
     - (BOOL)saveData:(nonnull id)data toPath:(nonnull NSString *)pathString;
     ```
+    * Use API:
+    ```objective-c
+    PlistLocalDataHandler * dataHandler = [[PlistLocalDataHandler alloc] initWithPlistPath:@"/full/path/of/data.plist"];
+    [self.localDataHandler saveData:@{@"name":@"west"} toPath:@"the/full/path/data.plist"];
+    ```
   
   2 Retrieve Data from local:
     * pathString: A local path ULR in NSString
     ```objective-c
-   - (nullable id)getDataFromPath:(nonnull NSString *)pathString;
-   ```
-
+    - (nullable id)getDataFromPath:(nonnull NSString *)pathString;
+    ```
+    * Use API:
+    ```objective-c
+    PlistLocalDataHandler * dataHandler = [[PlistLocalDataHandler alloc] initWithPlistPath:@"/full/path/of/data.plist"];
+    NSDictionary *data = [self.localDataHandler getDataFromPath:@"the/full/path/data.plist"];
+    ```
+    
 ### REQ03
 Refer to EnvironmentReaderLibrary `Test` target.
 
