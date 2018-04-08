@@ -9,7 +9,7 @@
 #ifndef Constants_h
 #define Constants_h
 
-#define END_POINT_URL @"https://api.data.gov.sg/v1/environment/psi?date=2018-04-05"
+#define END_POINT_URL @"https://api.data.gov.sg/v1/environment/psi"
 #define PLIST_NAME @"EnviornmentReaderDB.plist"
 #define DATE_FORMAT_SERVER @"yyyy-MM-dd'T'HH:mm:ssZZZZZ"
 #define DATE_FORMAT_DISPLAY @"dd/MM/yyyy HH:mm:ss a"

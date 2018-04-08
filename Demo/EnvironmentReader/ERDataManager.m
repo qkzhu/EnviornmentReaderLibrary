@@ -45,7 +45,6 @@
         BOOL saveResult = [self.localDataHandler saveData:data toPath:self.plistFullPath];
         complete(saveResult);
     });
-    
 }
 
 - (void)getDataOnComplete:(nullable void (^)(id))complete;
