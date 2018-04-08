@@ -28,6 +28,7 @@
 @property (strong, nonatomic) ERDataCollection *allData;
 @property (strong, nonatomic) DisplayDataVC *displayVC;
 
+@property (assign, nonatomic) BOOL isQuerying;
 @end
 
 @implementation ViewController
@@ -37,6 +38,7 @@
 {
     [super viewDidLoad];
     
+    self.isQuerying = NO;
     [self updateButtonsUI];
     self.currViewType = eViewTypeHome;
     [self updateButtonBackground];
@@ -124,14 +126,44 @@
 
 - (void)refreshDataOnline
 {
+    if (self.isQuerying) { return; }
+    
+    self.isQuerying = YES;
+    
     __weak typeof(self) weakSelf = self;
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"Query in progress..."
+                                                                     message:nil
+                                                              preferredStyle:UIAlertControllerStyleAlert];
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        weakSelf.isQuerying = NO;
+        [weakSelf refreshDataFromLocal];
+        [alertVC dismissViewControllerAnimated:YES completion:nil];
+    }]];
+    [self presentViewController:alertVC animated:YES completion:nil];
+    
+    
     [self.networkMgr fetchLatestEnviromentDataOnSuccess:^(id  _Nullable responseObject) {
+        if (!weakSelf.isQuerying)
+        {
+            [alertVC dismissViewControllerAnimated:YES completion:nil];
+            return;
+        }
+        
         [weakSelf.dataMgr saveData:responseObject onComplete:^(BOOL success) {
             [weakSelf refreshDataFromLocal];
+            weakSelf.isQuerying = NO;
+            [alertVC dismissViewControllerAnimated:YES completion:nil];
         }];
     } failure:^(NSError * _Nonnull error) {
+        
+        [alertVC dismissViewControllerAnimated:YES completion:nil];
+        
+        if (!weakSelf.isQuerying) { return; }
+        
         dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf refreshDataFromLocal];
+            [weakSelf promptAlertVCToRetryFetch];
+            weakSelf.isQuerying = NO;
+            [alertVC dismissViewControllerAnimated:YES completion:nil];
         });
     }];
 }
@@ -147,6 +179,24 @@
             });
         }];
     }];
+}
+
+- (void)promptAlertVCToRetryFetch
+{
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"Online fetch failed"
+                                                                     message:@"Do you want to retry?"
+                                                              preferredStyle:UIAlertControllerStyleAlert];
+    __weak typeof(self) weakSelf = self;
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [weakSelf refreshDataFromLocal];
+        [alertVC dismissViewControllerAnimated:YES completion:nil];
+    }]];
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"Retry" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [weakSelf refreshDataOnline];
+        [alertVC dismissViewControllerAnimated:YES completion:nil];
+    }]];
+    
+    [self presentViewController:alertVC animated:YES completion:nil];
 }
 
 - (void)displayData
@@ -187,5 +237,19 @@
         if (button.tag == (int)self.currViewType) { button.backgroundColor = selectedBg; }
         else { button.backgroundColor = unSelectedBg; }
     }
+}
+
+- (void)showActivityPanel
+{
+    UIAlertController *alvertVC = [UIAlertController alertControllerWithTitle:@"Loading"
+                                                                      message:nil
+                                                               preferredStyle:UIAlertControllerStyleAlert];
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithFrame:alvertVC.view.bounds];
+    indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    indicator.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [alvertVC.view addSubview:indicator];
+    [indicator startAnimating];
+    [self presentViewController:alvertVC animated:YES completion:nil];
+    
 }
 @end
