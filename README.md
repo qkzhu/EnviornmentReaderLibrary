@@ -77,3 +77,8 @@ Refer to Demo/`EnvironmentReader` project. Suggest to test in a high latency net
 
 ### REQ10
 Refer to Demo/`EnvironmentReader` project.
+
+
+### Previews:
+| ![Image](https://github.com/qkzhu/EnviornmentReaderLibrary/blob/master/Demo/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%207%20-%202018-04-09%20at%2000.18.18.png) | ![Image](https://github.com/qkzhu/EnviornmentReaderLibrary/blob/master/Demo/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%207%20-%202018-04-09%20at%2000.18.23.png) | ![Image](https://github.com/qkzhu/EnviornmentReaderLibrary/blob/master/Demo/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%207%20-%202018-04-09%20at%2000.18.29.png) | ![Image](https://github.com/qkzhu/EnviornmentReaderLibrary/blob/master/Demo/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%207%20-%202018-04-09%20at%2000.19.11.png) |
+| ------ | ------ | ------ | ------ |
