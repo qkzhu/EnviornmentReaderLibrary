@@ -1,0 +1,6 @@
+framework module EnvironmentReaderLibrary {
+  umbrella header "EnvironmentReaderLibrary.h"
+
+  export *
+  module * { export * }
+}
