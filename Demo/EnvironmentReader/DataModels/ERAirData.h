@@ -10,16 +10,24 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class ERRegionAirDataMap;
+
 @interface ERAirData : NSObject
 
-+ (instancetype)parse:(NSDictionary *)data;
+@property (strong, nonatomic) NSArray<ERRegionAirDataMap *> *regionWithAirData;
 
-@property (assign, nonatomic) double west;
-@property (assign, nonatomic) double national;
-@property (assign, nonatomic) double east;
-@property (assign, nonatomic) double central;
-@property (assign, nonatomic) double south;
-@property (assign, nonatomic) double north;
++ (instancetype)parse:(NSDictionary *)data;
+- (double)getNationalData;
+
+@end
+
+
+@interface ERRegionAirDataMap: NSObject
+
++ (instancetype)initWithRegionName:(NSString *)regName airData:(double)data;
+
+@property (strong, nonatomic) NSString *regionName;
+@property (assign, nonatomic) double airData;
 
 @end
 

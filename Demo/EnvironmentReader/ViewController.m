@@ -10,19 +10,23 @@
 #import "ERNetworkManager.h"
 #import "ERDataManager.h"
 #import "ERDataCollection.h"
+#import "DisplayDataVC.h"
+#import "ERDailyData.h"
+#import "ERHelper.h"
+#import "Constants.h"
 
-typedef enum {
-    eViewTypeHome, eViewTypePSI, eViewTypePM25
-} eViewType;
+static NSString *const SBID = @"DisplayDataVCIdentifier";
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *lblDisplay;
+@property (weak, nonatomic) IBOutlet UIView *viewDetailHolder;
 
 @property (strong, nonatomic) ERNetworkManager *networkMgr;
 @property (strong, nonatomic) ERDataManager *dataMgr;
 @property (assign, nonatomic) eViewType currViewType;
 @property (strong, nonatomic) ERDataCollection *allData;
+
+@property (strong, nonatomic) DisplayDataVC *displayVC;
 
 @end
 
@@ -36,7 +40,6 @@ typedef enum {
     self.currViewType = eViewTypeHome;
     [self refreshDataOnline];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -87,6 +90,19 @@ typedef enum {
     return _dataMgr;
 }
 
+- (DisplayDataVC *)displayVC
+{
+    if (!_displayVC)
+    {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
+        
+        _displayVC = [storyboard instantiateViewControllerWithIdentifier:SBID];
+        [self addChildViewController:_displayVC];
+        [self.viewDetailHolder addSubview:_displayVC.view];
+        _displayVC.view.frame = self.viewDetailHolder.bounds;
+    }
+    return _displayVC;
+}
 
 #pragma mark - Other Private functions
 - (void)refreshDataOnline
@@ -118,20 +134,30 @@ typedef enum {
 
 - (void)displayData
 {
+    ERDailyData *latestData = self.allData.dailyData.firstObject;
+    NSString *updateDateString = [ERHelper convertDate:latestData.updateDate toStringWithFormat:Date_FORMAT_DISPLAY];
+    NSString *titleStr = updateDateString ? [NSString stringWithFormat:@"Last Result: %@", updateDateString] : @"";
+    [self.displayVC updateWithTitle:titleStr withData:latestData forViewType:self.currViewType];
+    
     switch (self.currViewType)
     {
         case eViewTypeHome:
-            self.lblDisplay.text = self.allData.regionData[0].regionName;
+            [self updateNavibarTitle:@"Enviornment Reader"];
             break;
             
         case eViewTypePSI:
-            self.lblDisplay.text = [NSString stringWithFormat:@"%.2f", self.allData.dailyData[0].psiData.national];
+            [self updateNavibarTitle:@"PSI (Hourly)"];
             break;
             
         case eViewTypePM25:
-            self.lblDisplay.text = [NSString stringWithFormat:@"%.2f", self.allData.dailyData[0].pm25Data.national];
+            [self updateNavibarTitle:@"PM2.5 (Hourly)"];
             break;
     }
+}
+
+- (void)updateNavibarTitle:(NSString *)title
+{
+    self.navigationItem.title = title;
 }
 
 @end

@@ -11,5 +11,6 @@
 @interface ERHelper : NSObject
 
 + (nullable NSDate *)dateFromString:(NSString *)dateStr format:(NSString *)formatStr;
++ (nullable NSString *)convertDate:(NSDate *)date toStringWithFormat:(NSString *)formatStr;
 
 @end

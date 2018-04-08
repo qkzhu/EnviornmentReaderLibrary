@@ -19,4 +19,14 @@
     return [dateFormatter dateFromString: dateStr];
 }
 
+
++ (nullable NSString *)convertDate:(NSDate *)date toStringWithFormat:(NSString *)formatStr
+{
+    if (!date || !formatStr) { return nil; }
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:formatStr];
+    return [dateFormatter stringFromDate:date];
+}
+
 @end

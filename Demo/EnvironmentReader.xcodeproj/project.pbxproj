@@ -13,6 +13,8 @@
 		F703286D2078D01E00184571 /* ERDailyData.m in Sources */ = {isa = PBXBuildFile; fileRef = F703286C2078D01E00184571 /* ERDailyData.m */; };
 		F70328702078D1FB00184571 /* ERDataCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = F703286F2078D1FB00184571 /* ERDataCollection.m */; };
 		F70328782079284700184571 /* ERHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F70328772079284700184571 /* ERHelper.m */; };
+		F703287B2079B8D900184571 /* DisplayDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F703287A2079B8D900184571 /* DisplayDataVC.m */; };
+		F703287E2079BACF00184571 /* ERDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F703287D2079BACF00184571 /* ERDataCell.m */; };
 		F795988A20787FE000575E23 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F795988920787FE000575E23 /* AppDelegate.m */; };
 		F795988D20787FE000575E23 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F795988C20787FE000575E23 /* ViewController.m */; };
 		F795989020787FE000575E23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F795988E20787FE000575E23 /* Main.storyboard */; };
@@ -57,6 +59,10 @@
 		F7032875207915BB00184571 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		F70328762079284700184571 /* ERHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ERHelper.h; sourceTree = "<group>"; };
 		F70328772079284700184571 /* ERHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ERHelper.m; sourceTree = "<group>"; };
+		F70328792079B8D900184571 /* DisplayDataVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisplayDataVC.h; sourceTree = "<group>"; };
+		F703287A2079B8D900184571 /* DisplayDataVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisplayDataVC.m; sourceTree = "<group>"; };
+		F703287C2079BACF00184571 /* ERDataCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ERDataCell.h; sourceTree = "<group>"; };
+		F703287D2079BACF00184571 /* ERDataCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ERDataCell.m; sourceTree = "<group>"; };
 		F795988520787FE000575E23 /* EnvironmentReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnvironmentReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F795988820787FE000575E23 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F795988920787FE000575E23 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -152,6 +158,10 @@
 				F795988920787FE000575E23 /* AppDelegate.m */,
 				F795988B20787FE000575E23 /* ViewController.h */,
 				F795988C20787FE000575E23 /* ViewController.m */,
+				F70328792079B8D900184571 /* DisplayDataVC.h */,
+				F703287A2079B8D900184571 /* DisplayDataVC.m */,
+				F703287C2079BACF00184571 /* ERDataCell.h */,
+				F703287D2079BACF00184571 /* ERDataCell.m */,
 				F795988E20787FE000575E23 /* Main.storyboard */,
 				F79598D62078AD9900575E23 /* ERNetworkManager.h */,
 				F79598D72078AD9900575E23 /* ERNetworkManager.m */,
@@ -362,12 +372,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F70328702078D1FB00184571 /* ERDataCollection.m in Sources */,
+				F703287B2079B8D900184571 /* DisplayDataVC.m in Sources */,
 				F70328602078C84700184571 /* ERRegion.m in Sources */,
 				F79598DB2078AEBF00575E23 /* ERDataManager.m in Sources */,
 				F795988D20787FE000575E23 /* ViewController.m in Sources */,
 				F70328782079284700184571 /* ERHelper.m in Sources */,
 				F703286D2078D01E00184571 /* ERDailyData.m in Sources */,
 				F79598D82078AD9900575E23 /* ERNetworkManager.m in Sources */,
+				F703287E2079BACF00184571 /* ERDataCell.m in Sources */,
 				F795989820787FE000575E23 /* main.m in Sources */,
 				F795988A20787FE000575E23 /* AppDelegate.m in Sources */,
 				F70328672078CDA500184571 /* ERAirData.m in Sources */,
@@ -543,6 +555,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYVJL76GLQ;
 				INFOPLIST_FILE = EnvironmentReader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -561,6 +574,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYVJL76GLQ;
 				INFOPLIST_FILE = EnvironmentReader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

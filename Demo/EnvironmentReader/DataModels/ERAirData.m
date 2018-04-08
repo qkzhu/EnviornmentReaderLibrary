@@ -32,17 +32,52 @@ static NSString *const kNorth = @"north";
     return self;
 }
 
+- (double)getNationalData
+{
+    for (ERRegionAirDataMap *eachAirRegionData in self.regionWithAirData)
+    {
+        if ([eachAirRegionData.regionName isEqualToString:kNational]) { return eachAirRegionData.airData; }
+    }
+    return 0.0;
+}
+
 #pragma mark - private functions
 - (void)parseData:(NSDictionary *)data
 {
     if (!data || ![data isKindOfClass:[NSDictionary class]]) { return; }
     
-    self.west = [data[kWest] doubleValue];
-    self.national = [data[kNational] doubleValue];
-    self.east = [data[kEast] doubleValue];
-    self.central = [data[kCentral] doubleValue];
-    self.south = [data[kSouth] doubleValue];
-    self.north = [data[kNorth] doubleValue];
+    //regionWithAirData
+    NSMutableArray *regionAirDataList = [NSMutableArray array];
+    [regionAirDataList addObject:[ERRegionAirDataMap initWithRegionName:kWest airData:[data[kWest] doubleValue]]];
+    [regionAirDataList addObject:[ERRegionAirDataMap initWithRegionName:kNational airData:[data[kNational] doubleValue]]];
+    [regionAirDataList addObject:[ERRegionAirDataMap initWithRegionName:kEast airData:[data[kEast] doubleValue]]];
+    [regionAirDataList addObject:[ERRegionAirDataMap initWithRegionName:kCentral airData:[data[kCentral] doubleValue]]];
+    [regionAirDataList addObject:[ERRegionAirDataMap initWithRegionName:kSouth airData:[data[kSouth] doubleValue]]];
+    [regionAirDataList addObject:[ERRegionAirDataMap initWithRegionName:kNorth airData:[data[kNorth] doubleValue]]];
+    
+    [regionAirDataList sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        ERRegionAirDataMap *d1 = (ERRegionAirDataMap *)obj1;
+        ERRegionAirDataMap *d2 = (ERRegionAirDataMap *)obj2;
+        
+        return d1.regionName < d2.regionName;
+    }];
+    self.regionWithAirData = regionAirDataList;
 }
+
+@end
+
+
+@implementation ERRegionAirDataMap
+
++ (instancetype)initWithRegionName:(NSString *)regName airData:(double)data
+{
+    ERRegionAirDataMap *regionAirMap = [ERRegionAirDataMap new];
+    regionAirMap.regionName = regName;
+    regionAirMap.airData = data;
+    
+    return regionAirMap;
+}
+
+
 
 @end
