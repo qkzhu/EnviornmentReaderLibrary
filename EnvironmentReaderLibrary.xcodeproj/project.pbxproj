@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7FC2FB7CB0BC971EEE906E09 /* Pods_EnvironmentReaderLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A2D31C0499C0A9D61961350 /* Pods_EnvironmentReaderLibrary.framework */; };
+		F70328732079100E00184571 /* AFNetworkHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = F70328712079100E00184571 /* AFNetworkHandler.h */; };
+		F70328742079100E00184571 /* AFNetworkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F70328722079100E00184571 /* AFNetworkHandler.m */; };
 		F795982320787B5500575E23 /* EnvironmentReaderLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F795981920787B5500575E23 /* EnvironmentReaderLibrary.framework */; };
 		F795982820787B5500575E23 /* EnvironmentReaderLibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F795982720787B5500575E23 /* EnvironmentReaderLibraryTests.m */; };
 		F795982A20787B5500575E23 /* EnvironmentReaderLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = F795981C20787B5500575E23 /* EnvironmentReaderLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,13 +34,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A2D31C0499C0A9D61961350 /* Pods_EnvironmentReaderLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnvironmentReaderLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA9ED1C274FEE3F27DF8A51B /* Pods-EnvironmentReaderLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnvironmentReaderLibrary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EnvironmentReaderLibrary/Pods-EnvironmentReaderLibrary.debug.xcconfig"; sourceTree = "<group>"; };
+		CDA2D3D11F960D0827F91D90 /* Pods-EnvironmentReaderLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnvironmentReaderLibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-EnvironmentReaderLibrary/Pods-EnvironmentReaderLibrary.release.xcconfig"; sourceTree = "<group>"; };
+		F70328712079100E00184571 /* AFNetworkHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFNetworkHandler.h; sourceTree = "<group>"; };
+		F70328722079100E00184571 /* AFNetworkHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNetworkHandler.m; sourceTree = "<group>"; };
 		F795981920787B5500575E23 /* EnvironmentReaderLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EnvironmentReaderLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F795981C20787B5500575E23 /* EnvironmentReaderLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnvironmentReaderLibrary.h; sourceTree = "<group>"; };
 		F795981D20787B5500575E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F795982220787B5500575E23 /* EnvironmentReaderLibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnvironmentReaderLibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F795982720787B5500575E23 /* EnvironmentReaderLibraryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnvironmentReaderLibraryTests.m; sourceTree = "<group>"; };
 		F795982920787B5500575E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F795983320787B9A00575E23 /* EnvironmentReaderLibrary.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EnvironmentReaderLibrary.podspec; sourceTree = "<group>"; };
+		F795983320787B9A00575E23 /* EnvironmentReaderLibrary.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EnvironmentReaderLibrary.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F795983820787BE400575E23 /* NetworkInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkInterface.h; sourceTree = "<group>"; };
 		F79598C520789C5D00575E23 /* LocalDataInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalDataInterface.h; sourceTree = "<group>"; };
 		F79598C620789CE600575E23 /* MockLocalDataHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MockLocalDataHandler.h; sourceTree = "<group>"; };
@@ -53,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FC2FB7CB0BC971EEE906E09 /* Pods_EnvironmentReaderLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +76,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5664ED9E1EB9DCFF0824301E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA9ED1C274FEE3F27DF8A51B /* Pods-EnvironmentReaderLibrary.debug.xcconfig */,
+				CDA2D3D11F960D0827F91D90 /* Pods-EnvironmentReaderLibrary.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5D5C9400A605DBD1E7E41107 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A2D31C0499C0A9D61961350 /* Pods_EnvironmentReaderLibrary.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F795980F20787B5500575E23 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +100,8 @@
 				F795981B20787B5500575E23 /* EnvironmentReaderLibrary */,
 				F795982620787B5500575E23 /* EnvironmentReaderLibraryTests */,
 				F795981A20787B5500575E23 /* Products */,
+				5664ED9E1EB9DCFF0824301E /* Pods */,
+				5D5C9400A605DBD1E7E41107 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +121,8 @@
 				F795983820787BE400575E23 /* NetworkInterface.h */,
 				F79598CE20789EF400575E23 /* MockNetworkHandler.h */,
 				F79598CF20789EF400575E23 /* MockNetworkHandler.m */,
+				F70328712079100E00184571 /* AFNetworkHandler.h */,
+				F70328722079100E00184571 /* AFNetworkHandler.m */,
 				F79598C520789C5D00575E23 /* LocalDataInterface.h */,
 				F79598C620789CE600575E23 /* MockLocalDataHandler.h */,
 				F79598C720789CE600575E23 /* MockLocalDataHandler.m */,
@@ -120,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F795982A20787B5500575E23 /* EnvironmentReaderLibrary.h in Headers */,
+				F70328732079100E00184571 /* AFNetworkHandler.h in Headers */,
 				F79598D020789EF400575E23 /* MockNetworkHandler.h in Headers */,
 				F79598DE2078C19700575E23 /* PlistLocalDataHandler.h in Headers */,
 				F79598C820789CE600575E23 /* MockLocalDataHandler.h in Headers */,
@@ -134,6 +165,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F795982D20787B5500575E23 /* Build configuration list for PBXNativeTarget "EnvironmentReaderLibrary" */;
 			buildPhases = (
+				98C3F1362D6750B81839CAD1 /* [CP] Check Pods Manifest.lock */,
 				F795981420787B5500575E23 /* Sources */,
 				F795981520787B5500575E23 /* Frameworks */,
 				F795981620787B5500575E23 /* Headers */,
@@ -219,11 +251,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		98C3F1362D6750B81839CAD1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EnvironmentReaderLibrary-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F795981420787B5500575E23 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F70328742079100E00184571 /* AFNetworkHandler.m in Sources */,
 				F79598DF2078C19700575E23 /* PlistLocalDataHandler.m in Sources */,
 				F79598D120789EF400575E23 /* MockNetworkHandler.m in Sources */,
 				F79598C920789CE600575E23 /* MockLocalDataHandler.m in Sources */,
@@ -367,6 +421,7 @@
 		};
 		F795982E20787B5500575E23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA9ED1C274FEE3F27DF8A51B /* Pods-EnvironmentReaderLibrary.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -377,11 +432,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = EnvironmentReaderLibrary/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkzhu.EnvironmentReaderLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -391,6 +442,7 @@
 		};
 		F795982F20787B5500575E23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDA2D3D11F960D0827F91D90 /* Pods-EnvironmentReaderLibrary.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -401,11 +453,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = EnvironmentReaderLibrary/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkzhu.EnvironmentReaderLibrary;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -419,11 +467,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYVJL76GLQ;
 				INFOPLIST_FILE = EnvironmentReaderLibraryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkzhu.EnvironmentReaderLibraryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -436,11 +480,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GYVJL76GLQ;
 				INFOPLIST_FILE = EnvironmentReaderLibraryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qkzhu.EnvironmentReaderLibraryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

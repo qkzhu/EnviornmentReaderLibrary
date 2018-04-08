@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ERDataCollection : NSObject
 
-+ (instancetype)parse:(NSDictionary *)data;
++ (void)parseData:(NSDictionary *)data onComplete:(nullable void (^)(ERDataCollection *))complete;
 
 @property (strong, nonatomic) NSArray<ERRegion *> *regionData;
 @property (strong, nonatomic) NSArray<ERDailyData *> *dailyData;

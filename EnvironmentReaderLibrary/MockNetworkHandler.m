@@ -10,7 +10,7 @@
 
 @implementation MockNetworkHandler
 
-- (void)GET:(NSString *)URLString parameters:(id)parameters success:(void (^)(id _Nullable))success failure:(void (^)(NSError *))failure
+- (void)GET:(NSString *)urlString parameters:(id)parameters success:(void (^)(id _Nullable))success failure:(void (^)(NSError *))failure
 {
     success(@"hello");
 }

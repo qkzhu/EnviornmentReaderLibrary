@@ -12,6 +12,7 @@
 		F70328672078CDA500184571 /* ERAirData.m in Sources */ = {isa = PBXBuildFile; fileRef = F70328662078CDA500184571 /* ERAirData.m */; };
 		F703286D2078D01E00184571 /* ERDailyData.m in Sources */ = {isa = PBXBuildFile; fileRef = F703286C2078D01E00184571 /* ERDailyData.m */; };
 		F70328702078D1FB00184571 /* ERDataCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = F703286F2078D1FB00184571 /* ERDataCollection.m */; };
+		F70328782079284700184571 /* ERHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F70328772079284700184571 /* ERHelper.m */; };
 		F795988A20787FE000575E23 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F795988920787FE000575E23 /* AppDelegate.m */; };
 		F795988D20787FE000575E23 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F795988C20787FE000575E23 /* ViewController.m */; };
 		F795989020787FE000575E23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F795988E20787FE000575E23 /* Main.storyboard */; };
@@ -53,6 +54,9 @@
 		F703286C2078D01E00184571 /* ERDailyData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ERDailyData.m; sourceTree = "<group>"; };
 		F703286E2078D1FB00184571 /* ERDataCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ERDataCollection.h; sourceTree = "<group>"; };
 		F703286F2078D1FB00184571 /* ERDataCollection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ERDataCollection.m; sourceTree = "<group>"; };
+		F7032875207915BB00184571 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		F70328762079284700184571 /* ERHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ERHelper.h; sourceTree = "<group>"; };
+		F70328772079284700184571 /* ERHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ERHelper.m; sourceTree = "<group>"; };
 		F795988520787FE000575E23 /* EnvironmentReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnvironmentReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F795988820787FE000575E23 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F795988920787FE000575E23 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 		F795988720787FE000575E23 /* EnvironmentReader */ = {
 			isa = PBXGroup;
 			children = (
+				F7032875207915BB00184571 /* Constants.h */,
 				F795988820787FE000575E23 /* AppDelegate.h */,
 				F795988920787FE000575E23 /* AppDelegate.m */,
 				F795988B20787FE000575E23 /* ViewController.h */,
@@ -152,6 +157,8 @@
 				F79598D72078AD9900575E23 /* ERNetworkManager.m */,
 				F79598D92078AEBF00575E23 /* ERDataManager.h */,
 				F79598DA2078AEBF00575E23 /* ERDataManager.m */,
+				F70328762079284700184571 /* ERHelper.h */,
+				F70328772079284700184571 /* ERHelper.m */,
 				F79598E22078C6E900575E23 /* DataModels */,
 				F79598E32078C70500575E23 /* SupportingFiles */,
 			);
@@ -358,6 +365,7 @@
 				F70328602078C84700184571 /* ERRegion.m in Sources */,
 				F79598DB2078AEBF00575E23 /* ERDataManager.m in Sources */,
 				F795988D20787FE000575E23 /* ViewController.m in Sources */,
+				F70328782079284700184571 /* ERHelper.m in Sources */,
 				F703286D2078D01E00184571 /* ERDailyData.m in Sources */,
 				F79598D82078AD9900575E23 /* ERNetworkManager.m in Sources */,
 				F795989820787FE000575E23 /* main.m in Sources */,

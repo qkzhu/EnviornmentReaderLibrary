@@ -15,11 +15,13 @@ static NSString *const kItems = @"items";
 @implementation ERDataCollection
 
 #pragma mark - life cycle
-+ (instancetype)parse:(NSDictionary *)data
++ (void)parseData:(NSDictionary *)data onComplete:(nullable void (^)(ERDataCollection *))complete
 {
-    return [[ERDataCollection alloc] initWithData:data];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        ERDataCollection *erData = [[ERDataCollection alloc] initWithData:data];
+        complete(erData);
+    });
 }
-
 - (instancetype)initWithData:(NSDictionary *)data
 {
     if (self = [super init])

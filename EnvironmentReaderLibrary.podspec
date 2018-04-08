@@ -17,5 +17,6 @@ Pod::Spec.new do |spec|
 
     spec.subspec 'Source' do |ss|
         ss.source_files  = 'EnvironmentReaderLibrary/*.{h,m}'
+        ss.dependency 'AFNetworking'
     end
 end

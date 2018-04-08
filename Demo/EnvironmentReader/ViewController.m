@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ERNetworkManager.h"
 #import "ERDataManager.h"
+#import "ERDataCollection.h"
 
 typedef enum {
     eViewTypeHome, eViewTypePSI, eViewTypePM25
@@ -21,6 +22,7 @@ typedef enum {
 @property (strong, nonatomic) ERNetworkManager *networkMgr;
 @property (strong, nonatomic) ERDataManager *dataMgr;
 @property (assign, nonatomic) eViewType currViewType;
+@property (strong, nonatomic) ERDataCollection *allData;
 
 @end
 
@@ -32,83 +34,7 @@ typedef enum {
     [super viewDidLoad];
     
     self.currViewType = eViewTypeHome;
-    [self refreshData];
-    
-    //create testing
-    {
-        NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *documentsPath = [paths objectAtIndex:0];
-        NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"manuallyData.plist"];
-        
-        NSMutableArray *data = [NSMutableArray array];
-        [data addObject:@"1"];
-        [data addObject:@"2"];
-        [data addObject:@"3"];
-        
-        NSDictionary *plistDict = [[NSDictionary alloc] initWithObjects: [NSArray arrayWithObjects: data, nil]
-                                                                forKeys:[NSArray arrayWithObjects: @"Numbers", nil]];
-        
-        NSError *error = nil;
-        NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:plistDict
-                                                                       format:NSPropertyListXMLFormat_v1_0 options:0
-                                                                        error:&error];
-        
-        if(plistData)
-        {
-            [plistData writeToFile:plistPath atomically:YES];
-        }
-    }
-    //end crate tesing
-    
-    // retrieve testin
-    {
-        NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *documentsPath = [paths objectAtIndex:0];
-        NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"manuallyData.plist"];
-        
-        if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
-        {
-            plistPath = [[NSBundle mainBundle] pathForResource:@"manuallyData" ofType:@"plist"];
-        }
-        
-        NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
-        NSLog(@"%@", dict);
-    }
-    // end retrieve testing
-    
-    // remove data testing
-    {
-        NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *documentsPath = [paths objectAtIndex:0];
-        NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"manuallyData.plist"];
-        NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithContentsOfFile:(NSString *)plistPath];
-        
-        NSMutableArray *data = [dictionary objectForKey:@"Numbers"];
-        [data removeObjectAtIndex:0];
-        
-        [dictionary writeToFile:plistPath atomically:YES];
-    }
-    // end removing data testing
-    
-    // updating test
-    {
-        NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *documentsPath = [paths objectAtIndex:0];
-        NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"manuallyData.plist"];
-        
-        if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
-        {
-            plistPath = [[NSBundle mainBundle] pathForResource:@"manuallyData" ofType:@"plist"];
-        }
-        
-        NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithContentsOfFile:(NSString *)plistPath];
-        NSMutableArray *data = [dictionary objectForKey:@"Numbers"];
-        [data insertObject:@"1" atIndex:0];
-        [data insertObject:@"5" atIndex:data.count - 1];
-        [dictionary writeToFile:plistPath atomically:YES];
-        NSLog(@"%@", dictionary);
-    }
-    // end updating test
+    [self refreshDataOnline];
 }
 
 
@@ -139,8 +65,7 @@ typedef enum {
 
 - (IBAction)btnRefreshTapped:(id)sender
 {
-    [self refreshData];
-    [self displayData];
+    [self refreshDataOnline];
 }
 
 - (IBAction)btnHistoryTapped:(id)sender
@@ -164,15 +89,30 @@ typedef enum {
 
 
 #pragma mark - Other Private functions
-- (void)refreshData
+- (void)refreshDataOnline
 {
     __weak typeof(self) weakSelf = self;
     [self.networkMgr fetchLatestEnviromentDataOnSuccess:^(id  _Nullable responseObject) {
-        NSLog(@"fetch data success");
-        [weakSelf displayData];
+        [weakSelf.dataMgr saveData:responseObject onComplete:^(BOOL success) {
+            [weakSelf refreshDataFromLocal];
+        }];
     } failure:^(NSError * _Nonnull error) {
-        NSLog(@"fetch data failed");
-        [weakSelf displayData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf refreshDataFromLocal];
+        });
+    }];
+}
+
+- (void)refreshDataFromLocal
+{
+    __weak typeof(self) weakSelf = self;
+    [self.dataMgr getDataOnComplete:^(id _Nonnull localData) {
+        [ERDataCollection parseData:localData onComplete:^(ERDataCollection * _Nonnull allData) {
+            weakSelf.allData = allData;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf displayData];
+            });
+        }];
     }];
 }
 
@@ -181,15 +121,15 @@ typedef enum {
     switch (self.currViewType)
     {
         case eViewTypeHome:
-            self.lblDisplay.text = @"home data";
+            self.lblDisplay.text = self.allData.regionData[0].regionName;
             break;
             
         case eViewTypePSI:
-            self.lblDisplay.text = @"PSI data";
+            self.lblDisplay.text = [NSString stringWithFormat:@"%.2f", self.allData.dailyData[0].psiData.national];
             break;
             
         case eViewTypePM25:
-            self.lblDisplay.text = @"PM2.5 data";
+            self.lblDisplay.text = [NSString stringWithFormat:@"%.2f", self.allData.dailyData[0].pm25Data.national];
             break;
     }
 }

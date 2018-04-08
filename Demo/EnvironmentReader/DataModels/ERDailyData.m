@@ -8,9 +8,12 @@
 
 #import "ERDailyData.h"
 #import "ERAirData.h"
+#import "ERHelper.h"
+#import "Constants.h"
 
 static NSString *const kPublishDate = @"timestamp";
 static NSString *const kUpdateDate = @"update_timestamp";
+static NSString *const kReadings = @"readings";
 static NSString *const kPSIData = @"psi_twenty_four_hourly";
 static NSString *const kPM25Data = @"pm25_twenty_four_hourly";
 
@@ -44,11 +47,11 @@ static NSString *const kPM25Data = @"pm25_twenty_four_hourly";
 {
     if (!data || ![data isKindOfClass:[NSDictionary class]]) { return; }
     
-    self.publishDate = [data[kPublishDate] date];
-    self.updateDate = [data[kUpdateDate] date];
+    self.publishDate = [ERHelper dateFromString:data[kPublishDate] format:DATE_FORMAT_SERVER];
+    self.updateDate = [ERHelper dateFromString:data[kUpdateDate] format:DATE_FORMAT_SERVER];
     
-    self.psiData = [ERAirData parse:data[kPSIData]];
-    self.pm25Data = [ERAirData parse:data[kPM25Data]];
+    self.psiData = [ERAirData parse:data[kReadings][kPSIData]];
+    self.pm25Data = [ERAirData parse:data[kReadings][kPM25Data]];
 }
 
 @end

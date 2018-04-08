@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol NetworkInterface <NSObject>
 
-- (void)GET:(nonnull NSString *)URLString
+- (void)GET:(nonnull NSString *)urlString
  parameters:(nullable id)parameters
     success:(nullable void (^)(id _Nullable responseObject))success
     failure:(nullable void (^)(NSError *error))failure;

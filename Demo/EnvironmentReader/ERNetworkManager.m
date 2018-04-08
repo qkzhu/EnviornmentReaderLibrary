@@ -8,8 +8,8 @@
 
 #import "ERNetworkManager.h"
 #import <EnvironmentReaderLibrary/NetworkInterface.h>
-#import <EnvironmentReaderLibrary/MockNetworkHandler.h>
-
+#import <EnvironmentReaderLibrary/AFNetworkHandler.h>
+#import "Constants.h"
 
 @interface ERNetworkManager()
 
@@ -23,7 +23,7 @@
 {
     if (self = [super init])
     {
-        self.networkHandler = [MockNetworkHandler new];
+        self.networkHandler = [AFNetworkHandler new];
     }
     
     return self;
@@ -33,13 +33,16 @@
                            success:(nullable void (^)(id _Nullable responseObject))success
                            failure:(nullable void (^)(NSError *error))failure;
 {
-    [self.networkHandler GET:@"123" parameters:nil success:^(id  _Nullable responseObject) {
-        NSLog(@"ERCall success");
-        success(@"success");
-    } failure:^(NSError * _Nonnull error) {
-        NSLog(@"ERCALL failure");
-        failure(nil);
-    }];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self.networkHandler GET:END_POINT_URL parameters:nil success:^(id  _Nullable responseObject) {
+            NSError *error;
+            NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:&error];
+            if (responseObject) { success(responseDic); }
+            else { failure(error); }
+        } failure:^(NSError * _Nonnull error) {
+            failure(error);
+        }];
+    });
 }
 
 - (void)fetchLatestEnviromentDataOnSuccess:(nullable void (^)(id _Nullable responseObject))success
