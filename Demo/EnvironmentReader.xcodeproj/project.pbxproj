@@ -25,6 +25,7 @@
 		F79598AD20787FE100575E23 /* EnvironmentReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F79598AC20787FE100575E23 /* EnvironmentReaderUITests.m */; };
 		F79598D82078AD9900575E23 /* ERNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F79598D72078AD9900575E23 /* ERNetworkManager.m */; };
 		F79598DB2078AEBF00575E23 /* ERDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F79598DA2078AEBF00575E23 /* ERDataManager.m */; };
+		F7F11D102079D76D00D0FF21 /* ERHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7F11D0F2079D76D00D0FF21 /* ERHistoryVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		F79598D72078AD9900575E23 /* ERNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ERNetworkManager.m; sourceTree = "<group>"; };
 		F79598D92078AEBF00575E23 /* ERDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ERDataManager.h; sourceTree = "<group>"; };
 		F79598DA2078AEBF00575E23 /* ERDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ERDataManager.m; sourceTree = "<group>"; };
+		F7F11D0E2079D76D00D0FF21 /* ERHistoryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ERHistoryVC.h; sourceTree = "<group>"; };
+		F7F11D0F2079D76D00D0FF21 /* ERHistoryVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ERHistoryVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +165,8 @@
 				F703287A2079B8D900184571 /* DisplayDataVC.m */,
 				F703287C2079BACF00184571 /* ERDataCell.h */,
 				F703287D2079BACF00184571 /* ERDataCell.m */,
+				F7F11D0E2079D76D00D0FF21 /* ERHistoryVC.h */,
+				F7F11D0F2079D76D00D0FF21 /* ERHistoryVC.m */,
 				F795988E20787FE000575E23 /* Main.storyboard */,
 				F79598D62078AD9900575E23 /* ERNetworkManager.h */,
 				F79598D72078AD9900575E23 /* ERNetworkManager.m */,
@@ -383,6 +388,7 @@
 				F795989820787FE000575E23 /* main.m in Sources */,
 				F795988A20787FE000575E23 /* AppDelegate.m in Sources */,
 				F70328672078CDA500184571 /* ERAirData.m in Sources */,
+				F7F11D102079D76D00D0FF21 /* ERHistoryVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

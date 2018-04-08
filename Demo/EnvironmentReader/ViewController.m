@@ -14,8 +14,7 @@
 #import "ERDailyData.h"
 #import "ERHelper.h"
 #import "Constants.h"
-
-static NSString *const SBID = @"DisplayDataVCIdentifier";
+#import "ERHistoryVC.h"
 
 @interface ViewController ()
 
@@ -73,7 +72,10 @@ static NSString *const SBID = @"DisplayDataVCIdentifier";
 
 - (IBAction)btnHistoryTapped:(id)sender
 {
-    
+    ERHistoryVC *historyVC = [ERHistoryVC new];
+    historyVC.dailyData = self.allData.dailyData;
+    historyVC.vType = self.currViewType;
+    [self.navigationController pushViewController:historyVC animated:YES];
 }
 
 
@@ -96,7 +98,7 @@ static NSString *const SBID = @"DisplayDataVCIdentifier";
     {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:NSBundle.mainBundle];
         
-        _displayVC = [storyboard instantiateViewControllerWithIdentifier:SBID];
+        _displayVC = [storyboard instantiateViewControllerWithIdentifier:@"DisplayDataVCIdentifier"];
         [self addChildViewController:_displayVC];
         [self.viewDetailHolder addSubview:_displayVC.view];
         _displayVC.view.frame = self.viewDetailHolder.bounds;
@@ -135,7 +137,7 @@ static NSString *const SBID = @"DisplayDataVCIdentifier";
 - (void)displayData
 {
     ERDailyData *latestData = self.allData.dailyData.firstObject;
-    NSString *updateDateString = [ERHelper convertDate:latestData.updateDate toStringWithFormat:Date_FORMAT_DISPLAY];
+    NSString *updateDateString = [ERHelper convertDate:latestData.updateDate toStringWithFormat:DATE_FORMAT_DISPLAY];
     NSString *titleStr = updateDateString ? [NSString stringWithFormat:@"Last Result: %@", updateDateString] : @"";
     [self.displayVC updateWithTitle:titleStr withData:latestData forViewType:self.currViewType];
     

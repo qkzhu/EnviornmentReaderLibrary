@@ -18,7 +18,7 @@ static NSString *const CellID = @"ERDataCellIdentifier";
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) ERDailyData *data;
 @property (assign, nonatomic) eViewType vType;
-
+@property (strong, nonatomic) NSString *detailTitle;
 
 @end
 
@@ -29,7 +29,9 @@ static NSString *const CellID = @"ERDataCellIdentifier";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+ 
     [self setupTableView];
+    self.lblTitle.text = self.detailTitle;
 }
 
 - (void)setupTableView
@@ -41,6 +43,7 @@ static NSString *const CellID = @"ERDataCellIdentifier";
 #pragma mark - public function
 - (void)updateWithTitle:(NSString *)title withData:(ERDailyData *)data forViewType:(eViewType)viewType
 {
+    self.detailTitle = title;
     self.lblTitle.text = title;
     self.vType = viewType;
     self.data = data;

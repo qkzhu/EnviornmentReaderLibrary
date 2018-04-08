@@ -1,5 +1,5 @@
 //
-//  DisplayDataVC.h
+//  ERHistoryVC.h
 //  EnvironmentReader
 //
 //  Created by QianKun on 8/4/18.
@@ -13,9 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class ERDailyData;
 
-@interface DisplayDataVC : UIViewController
+@interface ERHistoryVC : UITableViewController
 
-- (void)updateWithTitle:(NSString *)title withData:(ERDailyData *)data forViewType:(eViewType)viewType;
+@property (weak, nonatomic) NSArray<ERDailyData *> *dailyData;
+@property (assign, nonatomic) eViewType vType;
 
 @end
 
