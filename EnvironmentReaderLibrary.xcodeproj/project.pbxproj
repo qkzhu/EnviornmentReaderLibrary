@@ -11,7 +11,6 @@
 		F70328732079100E00184571 /* AFNetworkHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = F70328712079100E00184571 /* AFNetworkHandler.h */; };
 		F70328742079100E00184571 /* AFNetworkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F70328722079100E00184571 /* AFNetworkHandler.m */; };
 		F795982320787B5500575E23 /* EnvironmentReaderLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F795981920787B5500575E23 /* EnvironmentReaderLibrary.framework */; };
-		F795982820787B5500575E23 /* EnvironmentReaderLibraryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F795982720787B5500575E23 /* EnvironmentReaderLibraryTests.m */; };
 		F795982A20787B5500575E23 /* EnvironmentReaderLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = F795981C20787B5500575E23 /* EnvironmentReaderLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F795983420787B9A00575E23 /* EnvironmentReaderLibrary.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F795983320787B9A00575E23 /* EnvironmentReaderLibrary.podspec */; };
 		F795983B20787BE400575E23 /* NetworkInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = F795983820787BE400575E23 /* NetworkInterface.h */; };
@@ -22,6 +21,7 @@
 		F79598DE2078C19700575E23 /* PlistLocalDataHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = F79598DC2078C19700575E23 /* PlistLocalDataHandler.h */; };
 		F79598DF2078C19700575E23 /* PlistLocalDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F79598DD2078C19700575E23 /* PlistLocalDataHandler.m */; };
 		F7A50667207A7C7600F1CD6B /* EnvironmentReaderLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A50666207A7C7600F1CD6B /* EnvironmentReaderLibrary.framework */; };
+		F7A50669207AD9EB00F1CD6B /* AFNetworkTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A50668207AD9EB00F1CD6B /* AFNetworkTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,6 @@
 		F795981C20787B5500575E23 /* EnvironmentReaderLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnvironmentReaderLibrary.h; sourceTree = "<group>"; };
 		F795981D20787B5500575E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F795982220787B5500575E23 /* EnvironmentReaderLibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnvironmentReaderLibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F795982720787B5500575E23 /* EnvironmentReaderLibraryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnvironmentReaderLibraryTests.m; sourceTree = "<group>"; };
 		F795982920787B5500575E23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F795983320787B9A00575E23 /* EnvironmentReaderLibrary.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EnvironmentReaderLibrary.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F795983820787BE400575E23 /* NetworkInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkInterface.h; sourceTree = "<group>"; };
@@ -56,6 +55,7 @@
 		F79598DC2078C19700575E23 /* PlistLocalDataHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlistLocalDataHandler.h; sourceTree = "<group>"; };
 		F79598DD2078C19700575E23 /* PlistLocalDataHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlistLocalDataHandler.m; sourceTree = "<group>"; };
 		F7A50666207A7C7600F1CD6B /* EnvironmentReaderLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EnvironmentReaderLibrary.framework; sourceTree = "<group>"; };
+		F7A50668207AD9EB00F1CD6B /* AFNetworkTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNetworkTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +140,7 @@
 		F795982620787B5500575E23 /* EnvironmentReaderLibraryTests */ = {
 			isa = PBXGroup;
 			children = (
-				F795982720787B5500575E23 /* EnvironmentReaderLibraryTests.m */,
+				F7A50668207AD9EB00F1CD6B /* AFNetworkTest.m */,
 				F795982920787B5500575E23 /* Info.plist */,
 			);
 			path = EnvironmentReaderLibraryTests;
@@ -300,7 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F795982820787B5500575E23 /* EnvironmentReaderLibraryTests.m in Sources */,
+				F7A50669207AD9EB00F1CD6B /* AFNetworkTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
